@@ -4,31 +4,31 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YvSRrINNHnBkh-ucBDLY-2" target="YvSRrINNHnBkh-ucBDLY-4">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="YvSRrINNHnBkh-ucBDLY-2" target="YvSRrINNHnBkh-ucBDLY-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-2" value="&lt;div&gt;ob_start();&lt;/div&gt;&lt;div&gt;if ($page === &#39;home&#39;) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; require &#39;../pages/home.php&#39;;&lt;/div&gt;&lt;div&gt;} else if ($page === &#39;article&#39;) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; require &#39;../pages/single.php&#39;;&lt;/div&gt;&lt;div&gt;} else {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; require &#39;../pages/404.php&#39;;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;$content = ob_get_clean();&lt;/div&gt;&lt;div&gt;require &#39;../pages/template/default.php&#39;;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-2" value="&lt;div&gt;ob_start();&lt;/div&gt;&lt;div&gt;if ($page === &#39;home&#39;) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; require &#39;../pages/home.php&#39;;&lt;/div&gt;&lt;div&gt;} else if ($page === &#39;article&#39;) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; require &#39;../pages/single.php&#39;;&lt;/div&gt;&lt;div&gt;} else {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; require &#39;../pages/404.php&#39;;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;$content = ob_get_clean();&lt;/div&gt;&lt;div&gt;require &#39;../pages/template/default.php&#39;;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="300" y="6.25" width="470" height="350" as="geometry" />
         </mxCell>
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YvSRrINNHnBkh-ucBDLY-4" target="YvSRrINNHnBkh-ucBDLY-10">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="YvSRrINNHnBkh-ucBDLY-4" target="YvSRrINNHnBkh-ucBDLY-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-4" value="home.php&lt;br&gt;&lt;br&gt;$db-&amp;gt;query(query,class)" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-4" value="home.php&lt;br&gt;&lt;br&gt;$db-&amp;gt;query(query,class)" style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="650" y="520" width="150" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YvSRrINNHnBkh-ucBDLY-6" target="YvSRrINNHnBkh-ucBDLY-2">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="YvSRrINNHnBkh-ucBDLY-6" target="YvSRrINNHnBkh-ucBDLY-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-6" value="index.php&lt;div&gt;&lt;br&gt;$db = new NsAppBlog\Database(&#39;db_name&#39;);&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=9;" vertex="1" parent="1">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-6" value="index.php&lt;div&gt;&lt;br&gt;$db = new NsAppBlog\Database(&#39;db_name&#39;);&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=9;" parent="1" vertex="1">
           <mxGeometry x="40" y="88.75" width="210" height="267.5" as="geometry" />
         </mxCell>
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YvSRrINNHnBkh-ucBDLY-10" target="YvSRrINNHnBkh-ucBDLY-12">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="YvSRrINNHnBkh-ucBDLY-10" target="YvSRrINNHnBkh-ucBDLY-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-10" value="class: Article" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-10" value="class: Article" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="455" y="565" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="YvSRrINNHnBkh-ucBDLY-12" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="YvSRrINNHnBkh-ucBDLY-12" value="Article.php" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="275" y="460" width="120" height="175" as="geometry" />
         </mxCell>
       </root>
