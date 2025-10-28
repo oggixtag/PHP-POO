@@ -40,67 +40,78 @@ class Database
      */
     private function getPdo()
     {
+
+        //Utility::fVarDump('Database::getPdo called.');
+
         /* On vérifie si l'instance de PDO n'existe pas déjà
          * Si elle n'existe pas, on la crée
          */
-        if ($this->pdo === null) {
-            $pdo = new PDO('mysql:host=localhost;dbname=blog', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->pdo = $pdo;
-            /*echo "<pre>";
-            var_dump('PDO instatialised');
-            echo "</pre>";*/
-        }
-        /*echo "<pre>";
-        var_dump('getPDO called');
-        echo "</pre>";*/
+        //if ($this->pdo === null) {
+        $dns = 'mysql:host=' . $this->dbhost . ';dbname=' . $this->dbname;
+        $pdo = new PDO($dns, $this->dbusername, $this->dbpassword);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->pdo = $pdo;
+        //}
         return $pdo;
     }
 
-    /*  Méthode pour exécuter une requête SQL
-     * 
-     * @param string $statement : requête SQL à exécuter
-     */
-    public function query($statement)
-    {
-        // $this->getPdo() <=> $this->pdo
-        // $req = $pdo->query('SELECT * FROM articles');
-
-        $req = $this->getPdo()->query($statement);
-        $datas = $req->fetchAll(PDO::FETCH_OBJ);
-        return $datas;
-
-        // genére un tableau d'objets issu de la classe (stdClass)
-    }
-
-
-
-    /*  Méthode pour exécuter une requête SQL
+    /*  Méthode pour exécuter une requête SQL ; fetchAll
      * 
      * @param string $statement : requête SQL à exécuter
      * @param string $classe_name : nom de la classe pour le fetch
      */
-    public function queryFc($statement, $classe_name)
+    public function queryFall($statement, $classe_name)
     {
-
-        /*var_dump($statement);
-        var_dump($classe_name);*/
-
         $req = $this->getPdo()->query($statement);
         $datas = $req->fetchAll(PDO::FETCH_CLASS, $classe_name);
         return $datas;
     }
 
-    public function prepareFc($statement, $attributes, $classe_name, $one = false)
+    /*  Méthode pour exécuter une requête SQL ; fetch
+     * 
+     * @param string $statement : requête SQL à exécuter
+     * @param string $classe_name : nom de la classe pour le fetch
+     */
+    public function queryF($statement, $classe_name)
+    {
+        $req = $this->getPdo()->query($statement);
+        $req->setFetchMode(PDO::FETCH_CLASS, $classe_name);
+        $datas = $req->fetch();
+        return $datas;
+    }
+
+    /*  Méthode pour exécuter une requête SQL préparée ; fetch
+     * 
+     * F : Fetch récupérer
+     * 
+     * @param string $statement : requête SQL à exécuter
+     * @param array $attributes : tableau des paramètres
+     * @param string $classe_name : nom de la classe pour le fetch
+     */
+    public function prepareF($statement, $attributes, $classe_name)
     {
         $req = $this->getPdo()->prepare($statement);
         $req->execute($attributes); //<=> tableau des paramètres
         $req->setFetchMode(PDO::FETCH_CLASS, $classe_name);
-        if ($one) {
-            $datas = $req->fetch();
-        } else {
-            $datas = $req->fetchAll();
-        }
+        $datas = $req->fetch();
+        return $datas;
+    }
+
+    /*  Méthode pour exécuter une requête SQL préparée ; fetchAll
+     * 
+     * F : Fetch récupérer
+     * all : tous
+     * 
+     * @param string $statement : requête SQL à exécuter
+     * @param array $attributes : tableau des paramètres
+     * @param string $classe_name : nom de la classe pour le fetch
+     */
+    public function prepareFall($statement, $attributes, $classe_name)
+    {
+        $req = $this->getPdo()->prepare($statement);
+        $req->execute($attributes); //<=> tableau des paramètres
+        $req->setFetchMode(PDO::FETCH_CLASS, $classe_name);
+        $datas = $req->fetchAll();
         return $datas;
     }
 }
