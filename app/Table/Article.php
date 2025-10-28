@@ -2,19 +2,15 @@
 
 namespace NsAppBlog\Table;
 
+use NsAppBlog\App;
+use NsAppBlog\Utility;
+
 /* Classe Article pour instataliser des articles */
 
-class Article
+class Article extends Table
 {
 
-    /**
-     * PDO fetch permet de passer aussi une classe en paramètre
-     *  
-     * */
-
-    /* Attributs de la classe Article */
-    //public $id;    // un article
-    //public $content;
+    protected static $table = 'articles';
 
     public function getUrl()
     {
