@@ -1,9 +1,11 @@
 <?php
 
-//namespace NsBlogApp;
+namespace NsAppBlog;
+
+use NsAppBlog\App;
 
 require '../app/Autoloader.php';
-NsAppBlog\Autoloader::register();
+Autoloader::register();
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -11,16 +13,17 @@ if (isset($_GET['page'])) {
     $page = 'home';
 }
 
-// Initialisation de la base de données
-$db = new NsAppBlog\Database('blog');
 
-//var_dump($db);
+//var_dump(App::getTitleSite());
+//r:ok
 
 ob_start();
 if ($page === 'home') {
     require '../pages/home.php';
 } else if ($page === 'article') {
-    require '../pages/single.php';
+    require '../pages/article.php';
+} elseif ($page === 'category') {
+    require '../pages/category.php';
 } else {
     require '../pages/404.php';
 }
